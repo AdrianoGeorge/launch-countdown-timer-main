@@ -1,31 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Launch countdown timer</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
+  <div class="container">
+    <header>
+      <h1>WE'RE LAUNCHING SOON</h1>
+    </header>
+    <main>
+      <!-- Timer countdown -->
+      <div class="timer">
+        <!-- days -->
+        <div class="time-box" id="days">
+          <!-- Card flip  -->
+          <div class="sheets">
+            <div class="sheet top">
+              <p></p>
+              <div class="sheet front">
+                <p></p>
+              </div>
+            </div>
+            <div class="sheet bottom">
+              <p></p>
+            </div>
+          </div>
+          <!-- Should i use class in span? -->
+          <span> DAYS </span>
+        </div>
 
-  We're launching soon
+        <!-- hours -->
+        <div class="time-box" id="hours">
+          <div class="sheets">
+            <div class="sheet top">
+              <p></p>
+              <div class="sheet front">
+                <p></p>
+              </div>
+            </div>
+            <div class="sheet bottom">
+              <p></p>
+            </div>
+          </div>
+          <span> HOURS</span>
+        </div>
 
-  Days
-  Hours
-  Minutes
-  Seconds
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+        <!-- minutes -->
+        <div class="time-box" id="minutes">
+          <div class="sheets">
+            <div class="sheet top">
+              <p></p>
+              <div class="sheet front">
+                <p></p>
+              </div>
+            </div>
+            <div class="sheet bottom">
+              <p></p>
+            </div>
+          </div>
+          <span>MINUTES</span>
+        </div>
+
+        <!-- seconds -->
+        <div class="time-box" id="seconds">
+          <div class="sheets">
+            <div class="sheet top">
+              <p></p>
+              <div class="sheet front">
+                <p></p>
+              </div>
+            </div>
+            <div class="sheet bottom">
+              <p></p>
+            </div>
+          </div>
+          <span>SECONDS</span>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <nav>
+        <a href="#" id="facebook-link"><img src="images/icon-facebook.svg" alt="facebook"></a>
+        <a href="#" id="pinterest-link"><img src="images/icon-pinterest.svg" alt="pinterest"></a>
+        <a href="#" id="instagram-link"><img src="images/icon-instagram.svg" alt="instagram"></a>
+      </nav>
+      <div class="attribution">
+        <p> Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. </p>
+        <p> Coded by Adrian George </p>
+      </div>
+    </footer>
   </div>
+  <script src="./script.js"></script>
 </body>
+
 </html>

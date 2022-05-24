@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@600;700&display=swap");
+
+.container {
+  width: 100%;
+  position: relative;
+  background: hsl(0, 15%, 6%);
+  background-image: url(images/bg-stars.svg);
+  user-select: none;
+}
+header,
+nav,
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  padding: 125px 30px;
+  color: rgb(232, 232, 232);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.4rem;
+  text-shadow: 1px 0 hsla(0, 0%, 100%, 0.15);
+}
+main {
+  width: 100%;
+}
+// Timer countdown
+.timer {
+  display: flex;
+}
+//time-box for days,hours,minutes,seconds
+.time-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // span Days Hours Minutes Seconds
+  span {
+    font-size: 0.7rem;
+    letter-spacing: 0.3rem;
+    color: hsl(0, 0%, 57%);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Start Cards Flips
+.sheets {
+  width: 115px;
+  height: 120px;
+  background: hsla(0, 0%, 4%, 0.6);
+  border-radius: 8px;
+  margin: 13px;
+}
+.sheet {
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  height: 46%;
+  font-weight: 700;
+  color: hsl(345, 95%, 68%);
+  p {
+    overflow: hidden;
+    line-height: 0;
+    opacity: 0;
+    animation: fade 0.5s 1.2s forwards;
+  }
+
+  &.top p {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.sheet p.flip {
+  display: flex;
+  align-items: flex-start;
+  transform: rotateX(180deg);
+}
+.sheet.top {
+  position: relative;
+  border-bottom: 1px solid transparent;
+  background: hsl(234, 17%, 12%);
+  border-radius: 6px 6px 0 0;
+}
+.sheet.top::after,
+.sheet.top::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(48%, 50%);
+  background: hsl(0, 0%, 4%);
+  height: 9px;
+  width: 10px;
+  border-radius: 50%;
+  z-index: 20;
+}
+.sheet.top::before {
+  right: unset;
+  left: 0;
+  transform: translate(-48%, 50%);
+}
+.sheet.bottom {
+  position: relative;
+  background: hsl(230, 15%, 16%);
+  border-radius: 0 0 6px 6px;
+  transform-style: preserve-3d;
+}
+.sheet.front {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  z-index: 10;
+}
+// End Cards flips
+
+// Media Queries
+@media only screen and (max-width: 1300px) {
+  .container {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 75%;
+  }
+  .sheets {
+    width: 80px;
+    height: 84px;
+    margin: 8px;
+  }
+  nav a img {
+    width: 2rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+  .sheets {
+    width: 60px;
+    height: 63px;
+    margin: 2px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  html {
+    font-size: 120%;
+  }
+  .sheets {
+    width: 140px;
+    height: 145px;
+    margin: 15px;
+  }
+}
+
+// Keyframes
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes turn {
+  from {
+    background: hsl(240, 11%, 23%);
+  }
+  to {
+    background: hsl(230, 14%, 17%);
+    transform: translateY(100%) rotateX(-180deg);
+  }
+}
